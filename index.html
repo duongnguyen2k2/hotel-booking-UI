@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Hotel booking confirmation page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 0.6875rem; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="page-layout">
+    <header class="left-side">
+      <a class="brand" href="#your-stay">
+        <img src="./assets/images/logo.svg" alt="Maison Soleil">
+      </a>
+
+      <!-- Native disclosure works without JavaScript. CSS can adapt its layout later. -->
+      <details class="guest-menu" open>
+        <summary class="menu-toggle">
+          <img src="./assets/images/icon-menu.svg" alt="">
+          <span>Guest menu</span>
+        </summary>
+        <div class="guest-panel">
+          <nav class="guest-navigation" aria-label="Guest navigation">
+            <ul>
+              <li>
+                <a href="#your-stay" aria-current="page">
+                  <img src="./assets/images/icon-bed.svg" alt="">
+                  <span>Your stay</span>
+                  <span class="navigation-badge" aria-label="1 booking">1</span>
+                </a>
+              </li>
+              <!-- Add real destinations when these pages are implemented. -->
+              <li>
+                <a aria-disabled="true">
+                  <img src="./assets/images/icon-house.svg" alt="">
+                  <span>The house</span>
+                </a>
+              </li>
+              <li>
+                <a aria-disabled="true">
+                  <img src="./assets/images/icon-pin.svg" alt="">
+                  <span>Around town</span>
+                </a>
+              </li>
+              <li>
+                <a href="#breakfast">
+                  <img src="./assets/images/icon-breakfast-outline.svg" alt="">
+                  <span>Breakfast</span>
+                </a>
+              </li>
+              <li>
+                <a aria-disabled="true">
+                  <img src="./assets/images/icon-mail.svg" alt="">
+                  <span>Messages</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="local-weather">
+            <p>Today in Cassis</p>
+            <p class="temperature">27°<span> Celsius</span></p>
+            <p>Sunny · light breeze</p>
+            <img src="./assets/images/icon-weather.svg" alt="">
+          </div>
+
+          <div class="information">
+            <p>Est. 1987</p>
+            <p>Maison Soleil · 12 Rue des Oliviers · Cassis</p>
+            <p>© 2026 Maison Soleil</p>
+          </div>
+        </div>
+      </details>
+    </header>
+
+    <main id="your-stay" class="right-side">
+      <header class="booking-header">
+        <p class="booking-status">Booking · Confirmed</p>
+        <div class="booking-heading-row">
+          <h1>Bienvenue, <span class="guest-name">Lucia.</span></h1>
+          <div class="booking-actions">
+            <!-- Enable these optional actions after adding their JavaScript handlers. -->
+            <button type="button" class="print-receipt" disabled>Print receipt</button>
+            <button type="button" class="add-to-calendar" disabled>Add to calendar</button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Mobile reading order: host note, receipt. Desktop positioning belongs in CSS. -->
+      <div class="booking-cards">
+        <section class="host-note" aria-labelledby="host-note-heading">
+          <header class="host-note-header">
+            <p class="card-label">Welcome card</p>
+            <img src="./assets/images/icon-sun.svg" alt="">
+          </header>
+          <h2 id="host-note-heading">A note from your host, <span class="host-name">Margaux.</span></h2>
+          <p>We're so glad you're coming. The shutters will be open, the lemonade cold, and the cat - Poivre - pretending not to notice you.</p>
+          <dl class="room-details">
+            <div>
+              <dt>Room</dt>
+              <dd>La Garrigue</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section class="receipt" aria-labelledby="receipt-heading">
+          <header class="receipt-header">
+            <div>
+              <p class="card-label">Receipt</p>
+              <h2 id="receipt-heading">Your stay</h2>
+            </div>
+            <p class="booking-reference">№ MS-2026 <span>0421-AH</span></p>
+          </header>
+
+          <dl class="stay-dates">
+            <div>
+              <dt>Check in</dt>
+              <dd>
+                <time datetime="2026-04-25T15:00">
+                  <span class="stay-date">25 Apr</span>
+                  <span class="stay-time">Saturday · 15:00</span>
+                </time>
+              </dd>
+            </div>
+            <div>
+              <dt>Check out</dt>
+              <dd>
+                <time datetime="2026-04-29T11:00">
+                  <span class="stay-date">29 Apr</span>
+                  <span class="stay-time">Wednesday · 11:00</span>
+                </time>
+              </dd>
+            </div>
+          </dl>
+
+          <table class="receipt-charges">
+            <caption>Booking charges in euros</caption>
+            <thead>
+              <tr>
+                <th scope="col">Description</th>
+                <th scope="col">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Room · La Garrigue · 4 nights</th>
+                <td>€ 620.00</td>
+              </tr>
+              <tr>
+                <th scope="row">Breakfast · 2 guests</th>
+                <td>€ 96.00</td>
+              </tr>
+              <tr>
+                <th scope="row">Tourist tax</th>
+                <td>€ 14.40</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row">Total paid</th>
+                <td>€ 730.40</td>
+              </tr>
+            </tfoot>
+          </table>
+
+          <footer class="receipt-footer">
+            <p>Paid · Wise · GBP</p>
+            <img src="./assets/images/icon-barcode.svg" alt="">
+          </footer>
+        </section>
+        <div class="guest-info">
+          <section id="arrival" class="info-card arrival-card" aria-labelledby="arrival-heading">
+            <header class="info-card-header">
+              <img src="./assets/images/icon-key.svg" alt="">
+              <h2 id="arrival-heading">Arrival</h2>
+              <span class="card-number" aria-hidden="true">01</span>
+            </header>
+            <p class="info-card-title">Check-in from <time datetime="15:00">15:00</time></p>
+            <p class="info-card-subtitle"><time datetime="2026-04-25">Sat, 25 April</time></p>
+            <p>Ring the brass bell by the blue door. If we're at the market, the key is in the terracotta pot by the olive tree.</p>
+          </section>
+
+          <section id="wifi" class="info-card wifi-card" aria-labelledby="wifi-heading">
+            <header class="info-card-header">
+              <img src="./assets/images/icon-wifi.svg" alt="">
+              <h2 id="wifi-heading">Wifi</h2>
+              <span class="card-number" aria-hidden="true">02</span>
+            </header>
+            <p class="info-card-title">Le Soleil · Guest</p>
+            <p class="info-card-subtitle">Password below</p>
+            <dl class="wifi-details">
+              <div>
+                <dt>Network</dt>
+                <dd>Le Soleil · Guest</dd>
+              </div>
+              <div>
+                <dt>Password</dt>
+                <dd>
+                  <span id="wifi-password">soleil-2026</span>
+                  <!-- Enable after implementing clipboard handling and feedback. -->
+                  <button type="button" class="copy-password" aria-label="Copy Wi-Fi password" disabled>Copy</button>
+                </dd>
+              </div>
+            </dl>
+            <p class="copy-status" role="status"></p>
+          </section>
+
+          <section id="breakfast" class="info-card breakfast-card" aria-labelledby="breakfast-heading">
+            <header class="info-card-header">
+              <img src="./assets/images/icon-breakfast.svg" alt="">
+              <h2 id="breakfast-heading">Breakfast</h2>
+              <span class="card-number" aria-hidden="true">03</span>
+            </header>
+            <p class="info-card-title">Served <time datetime="08:00">8</time> – <time datetime="10:30">10:30</time></p>
+            <p class="info-card-subtitle">On the terrace</p>
+            <p>Fresh figs, Marseille honey, pain au levain, and espresso. Gluten-free option? Leave a note the night before.</p>
+          </section>
+        </div>
+    </main>
+  </div>
+</body>
+</html>
+
